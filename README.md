@@ -2,7 +2,7 @@
 
 ### Getting Started
 
-1. Request access to [Llama-2-70b-chat-hf](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf)
+1. Request access to [Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)
 2. Create new full write access Hugging Face token [here](https://huggingface.co/settings/tokens). Save your token for the next step.
 3. Input your token after running the commands below
 
