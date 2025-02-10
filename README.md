@@ -1,4 +1,6 @@
-This is a side project to learn more about LLMs by building an LLM that RAGs your notes.
+# Notes AI
+
+### Getting Started
 
 1. Request access to [Llama-2-70b-chat-hf](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf)
 2. Create new full write access Hugging Face token [here](https://huggingface.co/settings/tokens). Save your token for the next step.
