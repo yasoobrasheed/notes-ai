@@ -1,9 +1,32 @@
-This is a side project to learn more about LLMs and RAG.
+This is a side project to learn more about LLMs by building an LLM that RAGs your notes.
 
-1. Launch a foundational LLM in a container and practice playing around with it from your local machine
-2. Build Bear note parser to fetch note metadata and convert tags to valuable pieces of information
-3. Store all your text files in a vector database hosted in a container
-4. Run a RAG over this data teach the LLM via prompt generation to understand what your notes mean.
-5. Set up a clean interface for you to query your LLM with the text file data in your DB
-6. Figure out how to create diffs between bear backups and store all your notes in S3. These diffs will become new data to query your LLM for.
-7. Then make it more complicated by trying out different LLMs and learning new methods of tuning and prompting
+1. Request access to [Llama-2-70b-chat-hf](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf)
+2. Create new full write access Hugging Face token [here](https://huggingface.co/settings/tokens). Save your token for the next step.
+3. Input your token after running the commands below
+
+```bash
+cd llm-service
+python3 -m venv env
+source env/bin/activate
+pip install -U "huggingface_hub[cli]"
+huggingface-cli login
+```
+
+4. Next startup your local development environment
+
+```bash
+pip install -U "huggingface_hub[cli]"
+pip install langchain_huggingface langchain accelerate fastapi uvicorn
+```
+
+3. Run the app in the filename where your FastAPI server lives
+
+```bash
+uvicorn app:app --host 0.0.0.0 --port 8000
+```
+
+4. Test out prompting your Llama 2 node
+
+```bash
+curl -X POST "http://localhost:8000/prompt/" -H "Content-Type: application/json" -d '{"query": "What is the first rule of fight club?"}'
+```
